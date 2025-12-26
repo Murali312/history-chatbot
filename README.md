@@ -21,9 +21,46 @@ Before you begin, ensure you have the following installed:
 2.  **[Ollama](https://ollama.com/)** (Running in the background)
 3.  **LangSmith API Key** (Optional, for tracing)
 
-### 📥 Download Ollama Models
+## ⚡ Quick Start Commands
+
+Follow these commands in order to set up and run the bot on your machine.
+
+### 1. Setup Environment
+Open your terminal in the project folder and run:
+
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate the environment (Windows)
+venv\Scripts\activate
+
+# Activate the environment (Mac/Linux)
+# source venv/bin/activate
+
+# Install required libraries
+pip install -r requirements.txt 
+
+### 2. Download Ollama Models
 You must pull the specific models used in the code before running the bot:
 
 ```bash
 ollama pull llama3.2:3b
 ollama pull granite-embedding:latest
+
+### 3. Create Configuration File
+Create a file named .env in the root folder and paste your keys
+
+```bash
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT=[https://api.smith.langchain.com](https://api.smith.langchain.com)
+LANGCHAIN_API_KEY=your_langchain_api_key_here
+LANGCHAIN_PROJECT=HistoricalFiguresBot
+
+### 4. Run the Bot
+Once everything is installed and Ollama is running in the background, run this command in your main terminal:
+
+```bash
+python app.py
+
+### After running, open your browser and go to: 👉 http://127.0.0.1:7860 ###
