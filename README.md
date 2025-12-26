@@ -25,5 +25,5 @@ Before you begin, ensure you have the following installed:
 You must pull the specific models used in the code before running the bot:
 
 ```bash
-ollama pull llama3
+ollama pull llama3.2:3b
 ollama pull granite-embedding:latest
